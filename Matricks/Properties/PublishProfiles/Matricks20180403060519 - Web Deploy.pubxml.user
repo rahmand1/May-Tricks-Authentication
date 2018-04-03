@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApChtatu5UkWfLmOYDgxCMQAAAAACAAAAAAAQZgAAAAEAACAAAABttOaLXK3THfxYhyTP4+ural8WnYkfUdYeFC6QvfNjWQAAAAAOgAAAAAIAACAAAABrwvuBYzfeAzFQi2eHeATYJAFsVi7iRTMLpZ+XpvSxj4AAAAD6pgEs2TimehDsTZSMAggu7haPSJZngx4mMGh4bZwZRjTfepyqw8/TPhDCoVCxjfmTBg6csllOQLH8fS0pBQNYKWmYz6BgdZjYDYAwy+KjZq5IUCP+xzk5ex4gQ1n3jIMiMi0bPxLUqrt18rTDYeIJjtfANFel/VGe4IAkU9h0ikAAAABN6BH+jzZZE+z9U+N5rsmE+GKTd2fmNm6wLLPGjjbNrdr2GM/Hs4JtFEu6sTeaAlY6Vi2xsu6jpm1/R5PK+ftO</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=(localdb)\mssqllocaldb;Database=Matricks-DB;Trusted_Connection=True;MultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\bin\Release\netcoreapp2.0\Matricks.deps.json
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\bin\Release\netcoreapp2.0\Matricks.runtimeconfig.json
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\bin\Release\netcoreapp2.0\Matricks.runtimeconfig.dev.json
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\bin\Release\netcoreapp2.0\Matricks.dll
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\bin\Release\netcoreapp2.0\Matricks.pdb
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\obj\Release\netcoreapp2.0\Matricks.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\obj\Release\netcoreapp2.0\Matricks.AssemblyInfoInputs.cache
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\obj\Release\netcoreapp2.0\Matricks.AssemblyInfo.cs
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\obj\Release\netcoreapp2.0\Matricks.dll
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\obj\Release\netcoreapp2.0\Matricks.pdb
+C:\Users\Lucas\Desktop\ProjectDemo2018\Matricks\obj\Release\netcoreapp2.0\Matricks.csprojResolveAssemblyReference.cache
