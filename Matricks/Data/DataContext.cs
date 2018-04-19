@@ -1,11 +1,12 @@
-﻿using Matricks.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using DatingProject.Models; // Needed for User Model
+using Microsoft.EntityFrameworkCore; // Needed for DbContext and database
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Matricks.Data
+namespace DatingProject.Data
 {
     public class DataContext : DbContext
     {
@@ -14,4 +15,5 @@ namespace Matricks.Data
 
         public DbSet<User> Users { get; set; }
     }
+
 }

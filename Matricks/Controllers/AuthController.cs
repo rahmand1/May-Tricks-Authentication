@@ -1,18 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
+﻿using System;
 using System.Text;
+using System.Security.Claims;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using Matricks.Data;
-using Matricks.DTOs;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 
-namespace Matricks.Controllers
+using DatingProject.Data;
+using DatingProject.DTOs;
+
+namespace DatingProject.Controllers
+
 {
     [Produces("application/json")]
     [Route("api/Auth")]
@@ -29,7 +30,7 @@ namespace Matricks.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterUserDTO user) 
+        public async Task<IActionResult> Register([FromBody] RegisterUserDTO user)
         {
             if (!ModelState.IsValid)
             {
@@ -37,7 +38,7 @@ namespace Matricks.Controllers
             }
             // Make user name lower case
             user.UserName = user.UserName.ToLower();
-            
+
             // If duplicate user name and return bad request here
             // Need method in AuthRepo to test for this
             //User Validation

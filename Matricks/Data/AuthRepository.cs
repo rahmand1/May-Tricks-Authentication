@@ -1,12 +1,14 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
-using Matricks.Models;
 using Microsoft.EntityFrameworkCore;
-using Matricks.Data;
+using DatingProject.Models;
+using System.Security.Cryptography; // Needed for Hash
 
-namespace Matricks.Data
+
+
+namespace DatingProject.Data
 {
     public class AuthRepository : IAuthRepository
     {
@@ -27,7 +29,7 @@ namespace Matricks.Data
         {
             // Hash password and compare with PasswordHash stored in database
 
-           
+
             var hash = new HMACSHA512();
             hash.Key = passwordSalt;
             var computedHash = hash.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
@@ -53,11 +55,12 @@ namespace Matricks.Data
         public bool ValidateUserName(string userName)
         {
             var matches = _context.Users.Where(b => b.UserName == userName).SingleOrDefault();
-            if(matches == null)
+            if (matches == null)
             {
                 return false;
 
-            } else
+            }
+            else
             {
                 return true;
             }
