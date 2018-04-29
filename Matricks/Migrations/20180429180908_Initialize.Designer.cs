@@ -11,8 +11,8 @@ using System;
 namespace Matricks.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180320131129_initdb")]
-    partial class initdb
+    [Migration("20180429180908_Initialize")]
+    partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -9,10 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 
-using DatingProject.Data;
-using DatingProject.DTOs;
+using Matricks.Data;
+using Matricks.DTOs;
 
-namespace DatingProject.Controllers
+namespace Matricks.Controllers
 
 {
     [Produces("application/json")]

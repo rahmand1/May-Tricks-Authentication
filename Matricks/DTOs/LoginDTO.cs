@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DatingProject.DTOs
+namespace Matricks.DTOs
 {
     public class LoginDTO
     {

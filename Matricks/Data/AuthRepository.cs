@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using DatingProject.Models;
+using Matricks.Models;
 using System.Security.Cryptography; // Needed for Hash
 
 
 
-namespace DatingProject.Data
+namespace Matricks.Data
 {
     public class AuthRepository : IAuthRepository
     {
