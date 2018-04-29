@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { AuthService } from '../services/auth.service';
+import { AuthService } from '../service/auth.service';
 import { Console } from '@angular/core/src/console';
 
 @Component({
@@ -9,18 +9,21 @@ import { Console } from '@angular/core/src/console';
 })
 export class NavComponent implements OnInit {
 
-  isLoggedIn = false;
+  //isLoggedIn = false;
   currentUser = "";
+
+  constructor(private authService: AuthService) {
+    this.currentUser = authService.whoami();
+  }
+
 
   /*
   constructor(private authService: AuthService) {
     var isCollapsed = false;
     this.isLoggedIn = authService.isLoggedIn();
   }
-
   */
-  constructor() { } // added so I can fix stuff
-
+ 
   ngOnInit() {
   }
 
@@ -32,46 +35,25 @@ export class NavComponent implements OnInit {
   }
   //alerts the user when they're already signed in
 
-  /*
+
+  VerifyLogin() {
+    return !this.authService.IsExpired();
+  }
+
+  
   login() {
-    if (localStorage.getItem('token') != null) {
-      this.alerts = [{
-        type: 'danger',
-        msg: 'User is already signed in!'
-      }];
-    }
-    //alerts the user when they're already logged in
-    else {
-      this.authService.login(this.model).subscribe(data => {
-        this.model = data;
-        this.alerts = [{
-          type: 'success',
-          msg: 'Welcome, you are now logged in!'
-        }]
-      },
-        //alerts the user if the username and password is wrong
-        error => this.alerts = [{
-          type: 'danger',
-          msg: 'Wrong username and/or password'
-        }]);
-    }
+    console.log(this.model);
+    this.authService.login(this.model).subscribe(data => console.log(data), error => console.log(error));
+    //console.log(localStorage.getItem('user'));
+    //console.log(localStorage.getitem('token'));
+    return this.VerifyLogin();
+
   }
   //alerts the user when they have signed out.
   logout() {
-    this.authService.logout();
-    if (localStorage.getItem('token') == null) {
-      this.alerts = [{
-        type: 'success',
-        msg: 'You have now signed out!'
-      }];
-    }
-    //Alerts the user when they can't sign out
-    else {
-      this.alerts = [{
-        type: 'danger',
-        msg: 'Cannot sign out at this time!'
-      }];
-    }
+    
+    this.authService.LogOut();
+    console.log('Logged out!');
   }
-  */
+  
 }

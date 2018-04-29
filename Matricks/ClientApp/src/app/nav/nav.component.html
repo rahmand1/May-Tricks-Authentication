@@ -34,16 +34,16 @@
 
 
     <!-- this runs if  logged in -->
-    <div class="nav-item" *ngIf="isLoggedIn">
-      <a class="nav-link" href="#"> {{ currentUser }}, Logout</a>
+    <div class="nav-item" *ngIf="VerifyLogin()">
+      <a class="nav-link" href="" (click)="logout()"> {{ currentUser }}, Logout</a>
     </div>
 
     <!-- this runs if NOT logged in -->
-    <div class="nav-item" *ngIf="!isLoggedIn">
+    <div class="nav-item" *ngIf="!VerifyLogin()">
       <a class="nav-link" routerLink="register"> Sign up </a>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="username" placeholder="User Name" aria-label="User Name">
-        <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
+        <input class="form-control mr-sm-2" type="text" placeholder="User Name" aria-label="User Name" name="username" [(ngModel)]="model.userName">
+        <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Search" name="password" [(ngModel)]="model.password">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>

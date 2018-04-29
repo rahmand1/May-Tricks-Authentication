@@ -53,6 +53,12 @@ namespace DatingProject
             }
 
 
+            app.UseCors(x => x.AllowAnyHeader()
+               .AllowAnyMethod()
+               .AllowAnyOrigin()
+.AllowCredentials());
+
+
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
