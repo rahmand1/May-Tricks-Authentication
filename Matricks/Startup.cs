@@ -42,11 +42,22 @@ namespace DatingProject
                  };
              });
             services.AddMvc();
+
+            services.AddMvc().AddJsonOptions(opt => {
+                opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
+
+
+            services.AddTransient<SeedDB>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,  SeedDB seeder)
         {
+
+         //   seeder.SeedUsers();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
