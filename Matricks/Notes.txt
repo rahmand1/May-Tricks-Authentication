@@ -1,0 +1,31 @@
+﻿app.module.ts
+import { FormsModule } from '@angular/forms';
+
+
+ng serve --open
+ng new ClientApp --routing
+
+ ng generate component
+ home
+ng g c about
+
+ ng generate component nav --spec=false 
+ ng g c register --spec=false 
+
+register
+
+
+Nesting Home Compoent..
+home into app component 
+
+ng g service data
+
+npm install bootstrap
+
+
+Add-Migration Initialize
+
+npm install @auth0/angular-jwt
+http://localhost:50758/api/values
+
+drop-database
