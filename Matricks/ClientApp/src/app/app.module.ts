@@ -19,6 +19,10 @@ import { DataService } from './service/data.service';
 import { AuthService } from './service/auth.service';
 
 import { JwtModule } from '@auth0/angular-jwt';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+import { MessagesComponent } from './messages/messages.component';
+import { FollingComponent } from './folling/folling.component';
+import { FollowingComponent } from './following/following.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -31,7 +35,11 @@ export function tokenGetter() {
     AppComponent,
     NavComponent,
     DemopofileComponent,
-    RegisterComponent
+    RegisterComponent,
+    ViewprofileComponent,
+    MessagesComponent,
+    FollingComponent,
+    FollowingComponent
   ],
   imports: [
     BrowserModule,

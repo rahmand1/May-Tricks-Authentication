@@ -56,7 +56,7 @@ namespace DatingProject
         public void Configure(IApplicationBuilder app, IHostingEnvironment env,  SeedDB seeder)
         {
 
-         //   seeder.SeedUsers();
+            seeder.SeedUsers();
 
             if (env.IsDevelopment())
             {
