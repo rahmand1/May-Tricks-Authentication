@@ -5,6 +5,7 @@ import { AuthUser } from '../models/authuser';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '../../environments/environment'; // Cool!!
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataService } from './data.service';
 
 
 @Injectable()
@@ -15,7 +16,7 @@ export class AuthService {
   baseUrl = 'http://localhost:50758'; 
 
 
-  constructor(private http: HttpClient, private JwtHelperService: JwtHelperService) { }
+  constructor(private http: HttpClient, private JwtHelperService: JwtHelperService, private _data : DataService) { }
 
   /* isReady(): boolean {
 
@@ -40,14 +41,18 @@ export class AuthService {
 
   whoami() {
 
-    return localStorage.getItem('User');
+    return localStorage.getItem('user');
 
   }
 
   login(user) {
     return this.http.post<AuthUser>(this.baseUrl + '/api/auth/login', user).map((result: AuthUser) => {
       if (result) {
-        localStorage.setItem('token', result.tokenString); localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('token', result.tokenString);
+        localStorage.setItem('user', JSON.stringify(result.userName));
+        console.log('JSON LOGIN FOR Username ' + JSON.stringify(result.userName) + ' without beef ' + result.userName);
+        this._data.updateCurrentUser(result.userName +'');
+        console.log(this._data.seeUser);
       } return result;
     });
   } 
@@ -60,7 +65,7 @@ export class AuthService {
 
   LogOut() {
     localStorage.removeItem('token');
-    localStorage.removeItem('User');
+    localStorage.removeItem('user');
     console.log("Logout Successful");
 
   }

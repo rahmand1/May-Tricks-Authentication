@@ -6,6 +6,8 @@ export class DataService {
 
 
 
+  private currentUser = new BehaviorSubject<any>;
+
 
 
   private localDB = new BehaviorSubject<any>([
@@ -213,10 +215,21 @@ export class DataService {
 
   localChange = this.localDB.asObservable();
 
-
+  seeUser = this.currentUser.asObservable();
 
 
   constructor() { }
+
+  updateCurrentUser(s: string) {
+    for (let u of this.localDB.value)
+    {
+      if (u.Username == s)
+        this.currentUser.next(u);
+
+    }
+
+
+  }
 
   updateMyData(localChange) {
 
