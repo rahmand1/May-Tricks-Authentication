@@ -12,8 +12,6 @@ export class DemopofileComponent implements OnInit {
   a: number = 10;
 
   constructor(private _data: DataService) {
-
-
   }
 
   ngOnInit() {
@@ -35,9 +33,12 @@ export class DemopofileComponent implements OnInit {
       //so 26 years and 140 days would be considered as 26, not 27.
     //var offset: number = (Math.floor((timeDiff / (1000 * 3600 * 24)) / 365));
     
-    
     //return timeDiff.toString();
-    return '20';
+    // 
+    var a: number = Math.random() * 50 + 18;
+
+    a = Math.round(a);
+    return a.toString();
     }
 
 

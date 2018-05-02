@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"> My Dating App </a>
+    <a class="navbar-brand"  routerLink=""> My Dating App </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,22 +7,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">{{ Title }} <span class="sr-only">{{ Title }}</span></a>
+        <a class="nav-link"  routerLink="">{{ Title }} <span class="sr-only">{{ Title }}</span></a>
       </li>
-      <!--
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Dropdown
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Something else here</a>
-    </div>
-  </li> -->
+     
+ 
       <li class="nav-item">
-        <a class="nav-link" href="#">Matches</a>
+        <a class="nav-link" routerLink="">Matches</a>
       </li>
       <li class="nav-item">
         <a class="nav-link"  routerLink="/following">Following</a>
@@ -35,7 +25,22 @@
 
     <!-- this runs if  logged in -->
     <div class="nav-item" *ngIf="VerifyLogin()">
-      <a class="nav-link" href="" (click)="logout()">Hello User, Logout</a>
+
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Welcome User
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"  routerLink="/following">Following</a>
+            <a class="dropdown-item"  routerLink="/messsages">Messages</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">Sign Out User</a>
+          </div>
+        </li>
+        </ul>
+
     </div>
 
     <!-- this runs if NOT logged in -->
@@ -44,7 +49,7 @@
       <form class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
         <input class="form-control mr-sm-2" type="text" placeholder="User Name" aria-label="User Name" name="username" [(ngModel)]="model.userName">
         <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Search" name="password" [(ngModel)]="model.password">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign In</button>
       </form>
     </div>
 
