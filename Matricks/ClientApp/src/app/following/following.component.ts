@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
+import { FollowingData } from '../models/FollowingData';
+
 
 @Component({
   selector: 'app-following',
@@ -10,9 +12,18 @@ export class FollowingComponent implements OnInit {
 
   peoplelist: any;
 
-  following: any = [];
+  following: FollowingData[];//   = new FollowingData[];
 
   constructor(private _data: DataService) { }
+
+  addFollowing(following : string) {
+
+    var a: FollowingData;
+    a.userName = following;
+    this.following.push(a);
+
+
+  }
 
   ngOnInit() {
 
